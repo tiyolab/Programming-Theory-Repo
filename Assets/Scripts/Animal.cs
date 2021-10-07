@@ -5,7 +5,7 @@ using UnityEngine;
 public class Animal : MonoBehaviour
 {
     private float speed;
-    public float Speed { get { return speed; }  set { speed = value; } }
+    public float Speed { get { return speed; }  set { speed = value; } }    // ENCAPSULATION
     protected Rigidbody rigidbody;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class Animal : MonoBehaviour
         Move();
     }
 
-    public void Move()
+    public void Move()  // ABSTRACTION
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
@@ -36,7 +36,7 @@ public class Animal : MonoBehaviour
         }
     }
 
-    protected virtual void Turn(Collision collision)
+    protected virtual void Turn(Collision collision)    // ABSTRACTION
     {
         if (collision.contactCount > 0)
         {
